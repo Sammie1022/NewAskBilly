@@ -49,8 +49,8 @@ class _landingPageState extends State<landingPage> {
                   // BoxFit.fill created the look I was going for.
                   fit: BoxFit.fill,
                   child: SizedBox(
-                    width: _controller.value.size?.width ?? 0,
-                    height: _controller.value.size?.height ?? 0,
+                    // width: _controller.value.size?.width ?? 0,
+                    // height: _controller.value.size?.height ?? 0,
                     child: VideoPlayer(_controller),
                   ),
                 ),
@@ -91,8 +91,7 @@ class _landingPageState extends State<landingPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const loadingPage()),
+                      MaterialPageRoute(builder: (context) => Loader()),
                     );
                   },
                 ),

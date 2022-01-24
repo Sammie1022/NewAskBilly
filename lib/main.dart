@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:abigail_askbilly/LandingPage/Landingpage.dart';
+import 'LoadingPage/Loadingpage.dart';
 
 void main() => runApp(MaterialApp(
       home: landingPage(),
