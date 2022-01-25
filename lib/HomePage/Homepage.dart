@@ -5,14 +5,17 @@ class homePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.lightBlue[100],
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          Center(
+            child: Image(
+              image: AssetImage('assets/background-for-all.gif'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ],
       ),
-      body: Center(
-          child: Text(
-        "Home Page",
-        textScaleFactor: 2,
-      )),
     );
   }
 }

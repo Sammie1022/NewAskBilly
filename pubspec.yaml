@@ -65,7 +65,8 @@ flutter:
     - assets/LandingPage/video/
     - assets/LandingPage/images/
     - assets/LoadingPage/
-    - assets/HomePage/images
+    - assets/background-for-all.gif
+    #- assets/HomePage/images
     #- assets/FAQsPage/images/buttons
     #- assets/FAQsPage/images/icons
     #- assets/FAQsPage/videos/answers
