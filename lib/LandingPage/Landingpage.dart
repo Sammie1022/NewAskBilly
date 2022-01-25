@@ -26,7 +26,7 @@ class landingPage extends StatelessWidget {
           Center(
             // Logo
             child: Image(
-              image: AssetImage('assets/LandingPage/images/logo.png'),
+              image: AssetImage('assets/logo.png'),
               height: 300,
               width: 300,
             ),

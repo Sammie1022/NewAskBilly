@@ -14,6 +14,14 @@ class homePage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
+          Align(
+            alignment: Alignment.topRight,
+            child: Image(
+              image: AssetImage('assets/logo.png'),
+              height: 70.0,
+              width: 70.0,
+            ),
+          ),
         ],
       ),
     );
