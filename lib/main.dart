@@ -1,12 +1,31 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:abigail_askbilly/LandingPage/Landingpage.dart';
-import 'LoadingPage/Loadingpage.dart';
 
-void main() => runApp(MaterialApp(
+import 'HomePage/Homepage.dart';
+//import 'LoadingPage/Loadingpage.dart';
+
+void main() => runApp(
+      DevicePreview(
+        enabled: !kReleaseMode,
+        builder: (context) => MyApp(), // Wrap your app
+      ),
+    );
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       home: landingPage(),
-    ));
-
+    );
+  }
+}
 // import 'package:flutter/material.dart';
 //
 // import 'package:video_player/video_player.dart';

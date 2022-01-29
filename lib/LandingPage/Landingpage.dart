@@ -16,7 +16,7 @@ class landingPage extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          Center(
+          FittedBox(
             child: Image(
               image: AssetImage(
                   'assets/LandingPage/images/landing-background.gif'),

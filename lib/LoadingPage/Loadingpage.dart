@@ -1,9 +1,7 @@
-//import 'package:abigail_askbilly/LandingPage/Landingpage.dart';
+import 'dart:async';
 import 'package:abigail_askbilly/HomePage/Homepage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter/services.dart';
-import 'dart:async';
 
 class Loader extends StatelessWidget {
   @override
