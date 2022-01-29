@@ -3,16 +3,6 @@ import 'package:abigail_askbilly/HomePage/Homepage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Loader extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: loadingPage(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
 class loadingPage extends StatefulWidget {
   @override
   _loadingPageState createState() => _loadingPageState();

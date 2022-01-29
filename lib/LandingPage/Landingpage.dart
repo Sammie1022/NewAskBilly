@@ -5,8 +5,14 @@ import 'package:abigail_askbilly/LoadingPage/Loadingpage.dart';
 //import 'package:video_player/video_player.dart';
 
 class landingPage extends StatelessWidget {
+  var size, height, width;
+
   @override
   Widget build(BuildContext context) {
+    // getting the size of the window
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
     //Set landscape orientation
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
@@ -16,19 +22,18 @@ class landingPage extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          FittedBox(
+          Center(
             child: Image(
               image: AssetImage(
                   'assets/LandingPage/images/landing-background.gif'),
-              fit: BoxFit.cover,
             ),
           ),
           Center(
             // Logo
             child: Image(
               image: AssetImage('assets/logo.png'),
-              height: 300,
-              width: 300,
+              height: height / 1.5,
+              width: width / 1.5,
             ),
           ), // Logo
           SizedBox(
@@ -58,9 +63,24 @@ class landingPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Loader()),
+                  MaterialPageRoute(builder: (context) => loadingPage()),
                 );
               },
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => loadingPage()),
+                );
+              },
+              child: const Text('Start', style: TextStyle(fontSize: 30)),
+              color: Colors.blue,
+              textColor: Colors.white,
+              elevation: 5,
             ),
           ),
         ],
