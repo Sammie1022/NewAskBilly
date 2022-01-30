@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:abigail_askbilly/LoadingPage/Loadingpage.dart';
+import 'package:sizer/sizer.dart';
 //import 'package:video_player/video_player.dart';
 
 class landingPage extends StatelessWidget {
@@ -18,69 +19,45 @@ class landingPage extends StatelessWidget {
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
     ]); //landscape orientation
+
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          Center(
+          Container(
+            margin: EdgeInsets.all(0.0),
             child: Image(
               image: AssetImage(
                   'assets/LandingPage/images/landing-background.gif'),
+              height: 100.h,
+              width: 100.w,
             ),
           ),
-          Center(
+          Container(
             // Logo
+            margin: EdgeInsets.fromLTRB(10.0.sp, 5.0.sp, 10.0.sp, 40.0.sp),
             child: Image(
               image: AssetImage('assets/logo.png'),
-              height: height / 1.5,
-              width: width / 1.5,
+              width: 75.w,
+              height: 75.h,
             ),
           ), // Logo
-          SizedBox(
-            height: 5.0,
-          ),
-          Positioned(
-            //alignment: Alignment.bottomCenter,
-            bottom: 10.0,
-            left: 310.0,
-            child: ElevatedButton(
-              child: Text(
-                'Start',
-                style: TextStyle(fontSize: 25.0),
+
+// Image Button
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => loadingPage()),
+              );
+            },
+            child: Container(
+              margin: EdgeInsets.fromLTRB(10.0.sp, 20.0.sp, 10.0.sp, 10.0.sp),
+              alignment: Alignment.bottomCenter,
+              child: Image.asset(
+                'assets/LandingPage/images/start-btn-unclicked.png',
+                height: 15.h,
               ),
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                    (Set<MaterialState> states) {
-                      if (states.contains(MaterialState.pressed))
-                        return Colors.amber;
-                      return Colors.blue; // Use the component's default.
-                    },
-                  ),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
-                  ))),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => loadingPage()),
-                );
-              },
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => loadingPage()),
-                );
-              },
-              child: const Text('Start', style: TextStyle(fontSize: 30)),
-              color: Colors.blue,
-              textColor: Colors.white,
-              elevation: 5,
             ),
           ),
         ],
@@ -88,110 +65,3 @@ class landingPage extends StatelessWidget {
     );
   }
 }
-
-// class landingPage extends StatefulWidget {
-//   @override
-//   _landingPageState createState() => _landingPageState();
-// }
-//
-// class _landingPageState extends State<landingPage> {
-//   // TODO 4: Create a VideoPlayerController object.
-//   late VideoPlayerController _controller;
-//
-//   // TODO 5: Override the initState() method and setup your VideoPlayerController
-//   @override
-//   void initState() {
-//     super.initState();
-//     // Pointing the video controller to our local asset.
-//     _controller = VideoPlayerController.asset(
-//         'assets/LandingPage/video/landing-bg-video.mp4')
-//       ..initialize().then((_) {
-//         // Once the video has been loaded we play the video and set looping to true.
-//         _controller.play();
-//         _controller.setLooping(true);
-//         // Ensure the first frame is shown after the video is initialized.
-//         setState(() {});
-//       });
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     //Set landscape orientation
-//     SystemChrome.setPreferredOrientations([
-//       DeviceOrientation.landscapeLeft,
-//       DeviceOrientation.landscapeRight,
-//     ]); //landscape orientation
-//     return MaterialApp(
-//       home: SafeArea(
-//         child: Scaffold(
-//           // TODO 6: Create a Stack Widget
-//           body: Stack(
-//             children: <Widget>[
-//               // TODO 7: Add a SizedBox to contain our video.
-//               SizedBox.expand(
-//                 child: FittedBox(
-//                   // If your background video doesn't look right, try changing the BoxFit property.
-//                   // BoxFit.fill created the look I was going for.
-//                   fit: BoxFit.fill,
-//                   child: SizedBox(
-//                     // width: _controller.value.size?.width ?? 0,
-//                     // height: _controller.value.size?.height ?? 0,
-//                     child: VideoPlayer(_controller),
-//                   ),
-//                 ),
-//               ),
-//               //Video Player
-//               Center(
-//                 // Logo
-//                 child: Image(
-//                   image: AssetImage('assets/LandingPage/images/logo.png'),
-//                   height: 300,
-//                   width: 300,
-//                 ),
-//               ), // Logo
-//               SizedBox(
-//                 height: 5.0,
-//               ),
-//               Positioned(
-//                 //alignment: Alignment.bottomCenter,
-//                 bottom: 10.0,
-//                 left: 310.0,
-//                 child: ElevatedButton(
-//                   child: Text(
-//                     'Start',
-//                     style: TextStyle(fontSize: 25.0),
-//                   ),
-//                   style: ButtonStyle(
-//                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
-//                         (Set<MaterialState> states) {
-//                           if (states.contains(MaterialState.pressed))
-//                             return Colors.amber;
-//                           return Colors.blue; // Use the component's default.
-//                         },
-//                       ),
-//                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-//                           RoundedRectangleBorder(
-//                         borderRadius: BorderRadius.circular(15.0),
-//                       ))),
-//                   onPressed: () {
-//                     Navigator.push(
-//                       context,
-//                       MaterialPageRoute(builder: (context) => Loader()),
-//                     );
-//                   },
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-//
-//   // TODO 8: Override the dipose() method to cleanup the video controller.
-//   @override
-//   void dispose() {
-//     super.dispose();
-//     _controller.dispose();
-//   }
-// }

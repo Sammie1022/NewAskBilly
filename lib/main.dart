@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:abigail_askbilly/LandingPage/Landingpage.dart';
-
 import 'HomePage/Homepage.dart';
-//import 'LoadingPage/Loadingpage.dart';
+import 'LoadingPage/Loadingpage.dart';
+import 'package:sizer/sizer.dart';
 
 void main() => runApp(
       DevicePreview(
@@ -18,11 +18,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      useInheritedMediaQuery: true,
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
-      home: landingPage(),
+    return Sizer(
+      builder: (context, orientaion, deviceType) {
+        return MaterialApp(
+          useInheritedMediaQuery: true,
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
+          home: landingPage(),
+        );
+      },
     );
   }
 }
