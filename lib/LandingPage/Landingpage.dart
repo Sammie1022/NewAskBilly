@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:abigail_askbilly/LoadingPage/Loadingpage.dart';
 import 'package:sizer/sizer.dart';
-//import 'package:video_player/video_player.dart';
 
 class landingPage extends StatelessWidget {
   var size, height, width;
@@ -21,48 +20,44 @@ class landingPage extends StatelessWidget {
     ]); //landscape orientation
 
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Container(
-            height: 100.h,
-            width: 100.w,
-            margin: EdgeInsets.all(0.0),
-            child: Image(
-              image: AssetImage(
+        body: new Stack(
+      children: <Widget>[
+        Container(
+          decoration: new BoxDecoration(
+            image: new DecorationImage(
+              image: new AssetImage(
                   'assets/LandingPage/images/landing-background.gif'),
-              height: 100.h,
-              width: 100.w,
+              fit: BoxFit.cover,
             ),
           ),
-          Container(
-            // Logo
-            margin: EdgeInsets.fromLTRB(40.0.sp, 5.0.sp, 10.0.sp, 40.0.sp),
-            child: Image(
-              image: AssetImage('assets/logo.png'),
-              width: 75.w,
-              height: 75.h,
-            ),
-          ), // Logo
-
-// Image Button
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => loadingPage()),
-              );
-            },
-            child: Container(
-              margin: EdgeInsets.fromLTRB(10.0.sp, 20.0.sp, 10.0.sp, 10.0.sp),
-              alignment: Alignment.bottomCenter,
-              child: Image.asset(
-                'assets/LandingPage/images/start-btn-unclicked.png',
-                height: 15.h,
-              ),
+        ),
+        Container(
+          // Logo
+          margin: EdgeInsets.fromLTRB(30.0.sp, 10.0.sp, 30.0.sp, 40.0.sp),
+          child: Image(
+            image: AssetImage('assets/logo.png'),
+            height: height / 1,
+            width: width / 1,
+          ),
+        ), // Logo
+        // Image Button
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => loadingPage()),
+            );
+          },
+          child: Container(
+            height: 90.h,
+            margin: EdgeInsets.fromLTRB(10.0.sp, 40.0.sp, 10.0.sp, 10.0.sp),
+            alignment: Alignment.bottomCenter,
+            child: Image.asset(
+              'assets/LandingPage/images/start-btn-unclicked.png',
             ),
           ),
-        ],
-      ),
-    );
+        ),
+      ],
+    ));
   }
 }
