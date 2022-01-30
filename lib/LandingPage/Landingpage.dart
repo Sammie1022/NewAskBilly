@@ -22,9 +22,10 @@ class landingPage extends StatelessWidget {
 
     return Scaffold(
       body: Stack(
-        fit: StackFit.expand,
         children: <Widget>[
           Container(
+            height: 100.h,
+            width: 100.w,
             margin: EdgeInsets.all(0.0),
             child: Image(
               image: AssetImage(
@@ -35,7 +36,7 @@ class landingPage extends StatelessWidget {
           ),
           Container(
             // Logo
-            margin: EdgeInsets.fromLTRB(10.0.sp, 5.0.sp, 10.0.sp, 40.0.sp),
+            margin: EdgeInsets.fromLTRB(40.0.sp, 5.0.sp, 10.0.sp, 40.0.sp),
             child: Image(
               image: AssetImage('assets/logo.png'),
               width: 75.w,
