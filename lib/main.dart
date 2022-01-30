@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:abigail_askbilly/LandingPage/Landingpage.dart';
+import 'package:flutter/services.dart';
 import 'HomePage/Homepage.dart';
 import 'LoadingPage/Loadingpage.dart';
 import 'package:sizer/sizer.dart';
@@ -15,16 +16,25 @@ void main() => runApp(
     );
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  var size, height, width;
   @override
   Widget build(BuildContext context) {
+    // getting the size of the window
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
+    //Set landscape orientation
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]); //landscape orientation
     return Sizer(
       builder: (context, orientaion, deviceType) {
         return MaterialApp(
           useInheritedMediaQuery: true,
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
-          home: landingPage(),
+          home: homePage(),
         );
       },
     );

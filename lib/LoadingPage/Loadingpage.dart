@@ -21,8 +21,11 @@ class _loadingPageState extends State<loadingPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Image(
-        image: AssetImage('assets/LoadingPage/loading.gif'),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/LoadingPage/loading.gif'),
+          fit: BoxFit.cover,
+        ),
       ),
       //child: FlutterLogo(size: MediaQuery.of(context).size.height));
     );

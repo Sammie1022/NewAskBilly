@@ -69,7 +69,8 @@ flutter:
     - assets/LandingPage/video/
     - assets/LandingPage/images/
     - assets/LoadingPage/
-    #- assets/HomePage/buttons
+    - assets/HomePage/sample-video.mp4
+    - assets/HomePage/buttons/
     #- assets/HomePage/images
     #- assets/FAQsPage/images/buttons
     #- assets/FAQsPage/images/icons
