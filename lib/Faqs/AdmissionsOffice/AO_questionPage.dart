@@ -44,11 +44,10 @@ class _admissionQuestionState extends State<admissionQuestion> {
           child: SafeArea(
             child: Builder(
               builder: (context) => Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(horizontal: 32),
+                alignment: Alignment.topLeft,
+                padding: EdgeInsets.fromLTRB(1.0.sp, 0.0.sp, 260.0.sp, 0.0.sp),
                 child: ButtonWidget(
-                  icon: Icons.open_in_new,
-                  text: 'Menu',
+                  icon: Icons.menu_rounded,
                   onClicked: () {
                     Scaffold.of(context).openDrawer();
                     // Scaffold.of(context).openEndDrawer();

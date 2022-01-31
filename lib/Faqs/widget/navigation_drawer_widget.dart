@@ -2,12 +2,12 @@ import 'package:abigail_askbilly/LoadingPage/Loadingpage.dart';
 import 'package:flutter/material.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
-  final padding = EdgeInsets.symmetric(horizontal: 20);
+  final padding = EdgeInsets.symmetric(horizontal: 10);
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Material(
-        color: Color.fromRGBO(50, 75, 205, 1),
+        color: Colors.amber,
         child: ListView(
           children: <Widget>[
             Container(
@@ -60,11 +60,22 @@ class NavigationDrawerWidget extends StatelessWidget {
     VoidCallback? onClicked,
   }) {
     final color = Colors.white;
-    final hoverColor = Colors.white70;
+    final hoverColor = Colors.grey;
 
     return ListTile(
-      leading: Icon(icon, color: color),
-      title: Text(text, style: TextStyle(color: color)),
+      leading: Icon(
+        icon,
+        color: color,
+        size: 30,
+      ),
+      title: Text(
+        text,
+        style: TextStyle(
+          color: color,
+          fontWeight: FontWeight.bold,
+          fontSize: 18,
+        ),
+      ),
       hoverColor: hoverColor,
       onTap: onClicked,
     );
