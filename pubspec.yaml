@@ -72,7 +72,8 @@ flutter:
     - assets/HomePage/sample-video.mp4
     - assets/HomePage/buttons/
     #- assets/HomePage/images
-    #- assets/FAQsPage/images/buttons
+    - assets/back-btn.png
+    - assets/FAQsPage/images/buttons/
     #- assets/FAQsPage/images/icons
     #- assets/FAQsPage/videos/answers
     #- assets/FAQsPage/videos/background

@@ -4,6 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:abigail_askbilly/LandingPage/Landingpage.dart';
 import 'package:flutter/services.dart';
+import 'Faqs/AdmissionsOffice/AO_questionPage.dart';
+import 'Faqs/Faqshome.dart';
 import 'HomePage/Homepage.dart';
 import 'LoadingPage/Loadingpage.dart';
 import 'package:sizer/sizer.dart';
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
           useInheritedMediaQuery: true,
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
-          home: homePage(),
+          home: admissionQuestionScreen(),
         );
       },
     );
