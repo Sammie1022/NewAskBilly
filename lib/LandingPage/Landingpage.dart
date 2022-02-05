@@ -26,43 +26,37 @@ class _landingPageState extends State<landingPage> {
 
     return Scaffold(
         body: Container(
+      height: 100.h,
+      width: 100.w,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/LandingPage/images/landing-background.gif'),
           fit: BoxFit.cover,
         ),
       ),
-      child: Container(
-        height: 100.h,
-        width: 100.w,
-        child: Column(
-          children: <Widget>[
-            Container(
-              // Logo
-              margin: EdgeInsets.fromLTRB(30.0.sp, 10.0.sp, 30.0.sp, 5.0.sp),
-              child: Image(
-                image: AssetImage('assets/logo.png'),
-                height: height / 1.3,
-                width: width / 1.3,
-              ),
-            ), // Logo
-            //Image Button
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => loadingPage()),
-                );
-              },
-              child: Container(
-                alignment: Alignment.bottomCenter,
-                child: Image.asset(
-                  'assets/LandingPage/images/start-btn-unclicked.png',
-                ),
-              ),
-            ),
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            'assets/logo.png',
+            height: 50.h,
+            width: 50.w,
+          ),
+          SizedBox(height: 10.h),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => loadingPage()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+                primary: Colors.red,
+                padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+                textStyle: TextStyle(fontSize: 20.sp)),
+            child: Text('Start'),
+          ),
+        ],
       ),
     ));
   }

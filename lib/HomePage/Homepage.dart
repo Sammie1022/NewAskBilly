@@ -45,94 +45,24 @@ class _homePageState extends State<homePage> {
 
     return Scaffold(
         body: Container(
+      height: 100.h,
+      width: 100.w,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/background-for-all.gif'),
           fit: BoxFit.cover,
         ),
       ),
-      child: Container(
-        height: 100.h,
-        width: 100.w,
-        child: Column(
-          children: <Widget>[
-            Container(
-              // Logo
-              alignment: Alignment.topRight,
-              margin: EdgeInsets.fromLTRB(0.0.sp, 1.0.sp, 0.0.sp, 0.0.sp),
-              //margin: EdgeInsets.fromLTRB(30.0.sp, 10.0.sp, 30.0.sp, 5.0.sp),
-              child: Image(
-                image: AssetImage('assets/logo.png'),
-                height: height / 8,
-                width: width / 8,
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => loadingPage()),
-                    );
-                  },
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.0.sp, 4.0.sp, 0.0.sp, 0.0.sp),
-                    child: Image.asset(
-                      'assets/HomePage/buttons/home-btn-faqs.png',
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => loadingPage()),
-                    );
-                  },
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.0.sp, 4.0.sp, 0.0.sp, 0.0.sp),
-                    child: Image.asset(
-                      'assets/HomePage/buttons/home-btn-maps.png',
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => loadingPage()),
-                    );
-                  },
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(0.0.sp, 4.0.sp, 0.0.sp, 0.0.sp),
-                    child: Image.asset(
-                      'assets/HomePage/buttons/home-btn about.png',
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            // TODO: Add a SizedBox to contain our video.
-            Container(
-              //alignment: Alignment.centerRight,
-              margin: EdgeInsets.fromLTRB(90.0.sp, 40.0.sp, 10.0.sp, 10.0.sp),
-              child: FittedBox(
-                // If your background video doesn't look right, try changing the BoxFit property.
-                // BoxFit.fill created the look I was going for.
-                fit: BoxFit.fill,
-                child: SizedBox(
-                  width: 80.w,
-                  height: 70.h,
-                  child: VideoPlayer(_controller),
-                ),
-              ),
-            ),
-
-            //Video Player
-          ],
-        ),
+      child: Row(
+        children: [
+          Column(
+            children: [
+              Image.asset('assets/HomePage/buttons/home-btn-faqs.png'),
+              Image.asset('assets/HomePage/buttons/home-btn-faqs.png'),
+              Image.asset('assets/HomePage/buttons/home-btn-faqs.png'),
+            ],
+          ),
+        ],
       ),
     ));
   }
