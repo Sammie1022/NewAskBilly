@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:abigail_askbilly/LoadingPage/Loadingpage.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
 class landingPage extends StatefulWidget {
@@ -39,10 +40,10 @@ class _landingPageState extends State<landingPage> {
         children: [
           Image.asset(
             'assets/logo.png',
-            height: 50.h,
-            width: 50.w,
+            height: 70.h,
+            width: 70.w,
           ),
-          SizedBox(height: 10.h),
+          SizedBox(height: 5.h),
           ElevatedButton(
             onPressed: () {
               Navigator.push(
@@ -51,9 +52,12 @@ class _landingPageState extends State<landingPage> {
               );
             },
             style: ElevatedButton.styleFrom(
-                primary: Colors.red,
-                padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
-                textStyle: TextStyle(fontSize: 20.sp)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(55)),
+                primary: HexColor('30408d'),
+                elevation: 5,
+                padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 8.w),
+                textStyle: TextStyle(fontSize: 10.sp)),
             child: Text('Start'),
           ),
         ],
