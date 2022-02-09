@@ -20,15 +20,15 @@ class _homePageState extends State<homePage> {
   void initState() {
     super.initState();
     // Pointing the video controller to our local asset.
-    _controller =
-        VideoPlayerController.asset('assets/HomePage/sample-video.mp4')
-          ..initialize().then((_) {
-            // Once the video has been loaded we play the video and set looping to true.
-            _controller.play();
-            _controller.setLooping(true);
-            // Ensure the first frame is shown after the video is initialized.
-            setState(() {});
-          });
+    // _controller =
+    //     VideoPlayerController.asset('assets/HomePage/sample-video.mp4')
+    //       ..initialize().then((_) {
+    //         // Once the video has been loaded we play the video and set looping to true.
+    //         _controller.play();
+    //         _controller.setLooping(true);
+    //         // Ensure the first frame is shown after the video is initialized.
+    //         setState(() {});
+    //       });
   }
 
   @override
@@ -47,20 +47,70 @@ class _homePageState extends State<homePage> {
         body: Container(
       height: 100.h,
       width: 100.w,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/background-for-all.gif'),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: Row(
+      child: Column(
         children: [
-          Column(
-            children: [
-              Image.asset('assets/HomePage/buttons/home-btn-faqs.png'),
-              Image.asset('assets/HomePage/buttons/home-btn-faqs.png'),
-              Image.asset('assets/HomePage/buttons/home-btn-faqs.png'),
-            ],
+          Container(
+            padding: EdgeInsets.all(6),
+            width: 100.w,
+            height: 20.h,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/paws.gif'),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Align(
+              child: Image.asset('assets/logo.png'),
+              alignment: Alignment.centerRight,
+            ),
+          ),
+          Container(
+            color: Colors.red,
+            height: 2.h,
+            width: 100.w,
+          ),
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        child: Image.asset(
+                            'assets/HomePage/buttons/home-btn about.png',
+                            height: 10.h,
+                            width: 20.w,
+                            fit: BoxFit.contain),
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      Image.asset('assets/HomePage/buttons/home-btn about.png',
+                          height: 10.h, width: 20.w, fit: BoxFit.contain),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      Image.asset('assets/HomePage/buttons/home-btn about.png',
+                          height: 10.h, width: 20.w, fit: BoxFit.contain),
+                    ],
+                  ),
+                  SizedBox(width: 5.w),
+                  Container(
+                    width: 60.w,
+                    height: 60.h,
+                    color: Colors.blue,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.red,
+            height: 2.h,
+            width: 100.w,
           ),
         ],
       ),

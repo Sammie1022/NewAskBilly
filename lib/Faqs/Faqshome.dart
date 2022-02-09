@@ -16,134 +16,86 @@ class _faqsHomeState extends State<faqsHome> {
     height = size.height;
     width = size.width;
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/background-for-all.gif'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Container(
-          child: SafeArea(
+        body: Container(
+      height: 100.h,
+      width: 100.w,
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.all(6),
+            width: 100.w,
+            height: 12.h,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/paws.gif'),
+                fit: BoxFit.cover,
+              ),
+            ),
             child: Row(
-              children: <Widget>[
+              children: [
+                Icon(
+                  Icons.menu_rounded,
+                  size: 11.h,
+                ),
+                Expanded(
+                    child: Text(
+                  'OFFICE',
+                  style: TextStyle(fontSize: 12.sp),
+                )),
+                Image.asset('assets/logo.png'),
+              ],
+            ),
+          ),
+          Container(
+            color: Colors.red,
+            height: 2.h,
+            width: 100.w,
+          ),
+          Expanded(
+            child: Stack(
+              children: [
                 Container(
-                  // Logo
-                  alignment: Alignment.topLeft,
-                  //margin: EdgeInsets.fromLTRB(90.0.sp, 1.0.sp, 0.0.sp, 0.0.sp),
-                  //margin: EdgeInsets.fromLTRB(30.0.sp, 10.0.sp, 30.0.sp, 5.0.sp),
-                  child: Image(
-                    image: AssetImage('assets/logo.png'),
-                    height: height / 9,
-                    width: width / 9,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => loadingPage()),
-                    );
-                  },
-                  child: Container(
-                    child: Image.asset(
-                      'assets/FAQsPage/images/buttons/AO-btn.png',
-                    ),
-                    height: height / 3,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => loadingPage()),
-                    );
-                  },
-                  child: Container(
-                    child: Image.asset(
-                      'assets/FAQsPage/images/buttons/SDAO-btn.png',
-                    ),
-                    height: height / 3,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => loadingPage()),
-                    );
-                  },
-                  child: Container(
-                    child: Image.asset(
-                      'assets/FAQsPage/images/buttons/GSO-btn.png',
-                    ),
-                    height: height / 3,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => loadingPage()),
-                    );
-                  },
-                  child: Container(
-                    child: Image.asset(
-                      'assets/FAQsPage/images/buttons/HEALTH-btn.png',
-                    ),
-                    height: height / 3,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => loadingPage()),
-                    );
-                  },
-                  child: Container(
-                    child: Image.asset(
-                      'assets/FAQsPage/images/buttons/ITRO-btn.png',
-                    ),
-                    height: height / 3,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => loadingPage()),
-                    );
-                  },
-                  child: Container(
-                    child: Image.asset(
-                      'assets/FAQsPage/images/buttons/LRC-btn.png',
-                    ),
-                    height: height / 3,
+                  height: 100.h,
+                  color: Colors.blue,
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.asset('assets/FAQsPage/images/buttons/AO-btn.png',
+                          width: 13.w, fit: BoxFit.contain),
+                      Image.asset('assets/FAQsPage/images/buttons/SDAO-btn.png',
+                          width: 13.w, fit: BoxFit.contain),
+                      Image.asset('assets/FAQsPage/images/buttons/SDAO-btn.png',
+                          width: 13.w, fit: BoxFit.contain),
+                      Image.asset('assets/FAQsPage/images/buttons/SDAO-btn.png',
+                          width: 13.w, fit: BoxFit.contain),
+                      Image.asset('assets/FAQsPage/images/buttons/SDAO-btn.png',
+                          width: 13.w, fit: BoxFit.contain),
+                      Image.asset('assets/FAQsPage/images/buttons/SDAO-btn.png',
+                          width: 13.w, fit: BoxFit.contain),
+                    ],
                   ),
                 ),
                 Container(
                   alignment: Alignment.bottomLeft,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => loadingPage()),
-                      );
-                    },
-                    child: Container(
-                      child: Image.asset(
-                        'assets/back-btn.png',
-                      ),
-                      height: height / 3,
-                    ),
+                  margin: EdgeInsets.only(bottom: 5),
+                  child: Image.asset(
+                    'assets/back-btn.png',
+                    height: 10.h,
+                    width: 10.w,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ],
             ),
           ),
-        ),
+          Container(
+            color: Colors.red,
+            height: 2.h,
+            width: 100.w,
+          ),
+        ],
       ),
-    );
+    ));
   }
 }
