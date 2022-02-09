@@ -1,6 +1,9 @@
+import 'package:abigail_askbilly/HomePage/Homepage.dart';
 import 'package:abigail_askbilly/LoadingPage/Loadingpage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
 class faqsHome extends StatefulWidget {
@@ -39,15 +42,15 @@ class _faqsHomeState extends State<faqsHome> {
                 ),
                 Expanded(
                     child: Text(
-                  'OFFICE',
-                  style: TextStyle(fontSize: 12.sp),
+                  'OFFICES',
+                  style: TextStyle(fontSize: 12.sp, fontFamily: 'Arial'),
                 )),
                 Image.asset('assets/logo.png'),
               ],
             ),
           ),
           Container(
-            color: Colors.red,
+            color: HexColor('f8d00e'),
             height: 2.h,
             width: 100.w,
           ),
@@ -56,41 +59,113 @@ class _faqsHomeState extends State<faqsHome> {
               children: [
                 Container(
                   height: 100.h,
-                  color: Colors.blue,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [HexColor('edf4fc'), HexColor('c8d9f3')])),
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image.asset('assets/FAQsPage/images/buttons/AO-btn.png',
-                          width: 13.w, fit: BoxFit.contain),
-                      Image.asset('assets/FAQsPage/images/buttons/SDAO-btn.png',
-                          width: 13.w, fit: BoxFit.contain),
-                      Image.asset('assets/FAQsPage/images/buttons/SDAO-btn.png',
-                          width: 13.w, fit: BoxFit.contain),
-                      Image.asset('assets/FAQsPage/images/buttons/SDAO-btn.png',
-                          width: 13.w, fit: BoxFit.contain),
-                      Image.asset('assets/FAQsPage/images/buttons/SDAO-btn.png',
-                          width: 13.w, fit: BoxFit.contain),
-                      Image.asset('assets/FAQsPage/images/buttons/SDAO-btn.png',
-                          width: 13.w, fit: BoxFit.contain),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => faqsHome()),
+                          );
+                        },
+                        child: Image.asset(
+                            'assets/FAQsPage/images/buttons/AO-btn.png',
+                            width: 13.w,
+                            fit: BoxFit.contain),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => faqsHome()),
+                          );
+                        },
+                        child: Image.asset(
+                            'assets/FAQsPage/images/buttons/SDAO-btn.png',
+                            width: 13.w,
+                            fit: BoxFit.contain),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => faqsHome()),
+                          );
+                        },
+                        child: Image.asset(
+                            'assets/FAQsPage/images/buttons/GSO-btn.png',
+                            width: 13.w,
+                            fit: BoxFit.contain),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => faqsHome()),
+                          );
+                        },
+                        child: Image.asset(
+                            'assets/FAQsPage/images/buttons/HEALTH-btn.png',
+                            width: 13.w,
+                            fit: BoxFit.contain),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => faqsHome()),
+                          );
+                        },
+                        child: Image.asset(
+                            'assets/FAQsPage/images/buttons/ITRO-btn.png',
+                            width: 13.w,
+                            fit: BoxFit.contain),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => faqsHome()),
+                          );
+                        },
+                        child: Image.asset(
+                            'assets/FAQsPage/images/buttons/LRC-btn.png',
+                            width: 13.w,
+                            fit: BoxFit.contain),
+                      ),
                     ],
                   ),
                 ),
                 Container(
                   alignment: Alignment.bottomLeft,
                   margin: EdgeInsets.only(bottom: 5),
-                  child: Image.asset(
-                    'assets/back-btn.png',
-                    height: 10.h,
-                    width: 10.w,
-                    fit: BoxFit.contain,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => homePage()),
+                      );
+                    },
+                    child: Image.asset(
+                      'assets/back-btn.png',
+                      height: 10.h,
+                      width: 10.w,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            color: Colors.red,
+            color: HexColor('30408d'),
             height: 2.h,
             width: 100.w,
           ),
