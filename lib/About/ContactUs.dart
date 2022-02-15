@@ -1,4 +1,5 @@
 import 'package:abigail_askbilly/About/Abouthome.dart';
+import 'package:abigail_askbilly/About/Admission.dart';
 import 'package:abigail_askbilly/Faqs/Faqshome.dart';
 import 'package:abigail_askbilly/Faqs/widget/navigation_drawer_widget.dart';
 import 'package:abigail_askbilly/HomePage/Homepage.dart';
@@ -70,7 +71,8 @@ class _contactUsState extends State<contactUs> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => mapsHome()),
+                            MaterialPageRoute(
+                                builder: (context) => aboutHome()),
                           );
                         },
                         child: Image.asset(
@@ -107,7 +109,8 @@ class _contactUsState extends State<contactUs> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => mapsHome()),
+                            MaterialPageRoute(
+                                builder: (context) => admissionAbout()),
                           );
                         },
                         child: Image.asset(

@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:abigail_askbilly/LandingPage/Landingpage.dart';
 import 'package:flutter/services.dart';
 import 'About/Abouthome.dart';
+import 'About/Admission.dart';
 import 'About/ContactUs.dart';
+import 'About/scholarshipAbout.dart';
 import 'Faqs/AdmissionsOffice/AO_questionPage.dart';
 import 'Faqs/Faqshome.dart';
 import 'HomePage/Homepage.dart';
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
           useInheritedMediaQuery: true,
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
-          home: contactUs(),
+          home: scholarshipAbout(),
         );
       },
     );
