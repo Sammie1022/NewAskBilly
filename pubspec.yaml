@@ -41,6 +41,7 @@ dependencies:
   responsive_framework: ^0.1.5
   hexcolor: ^2.0.6
   google_fonts: ^2.1.0
+  google_maps_flutter: ^2.0.3
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,8 @@ flutter:
     - assets/HomePage/sample-video.mp4
     - assets/HomePage/buttons/
     - assets/AboutNUPage/TopBtn/
+    - assets/MapsPage/
+    - assets/gradient-background.png
     #- assets/HomePage/images
     - assets/back-btn.png
     - assets/FAQsPage/images/buttons/

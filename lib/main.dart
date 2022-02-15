@@ -4,11 +4,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:abigail_askbilly/LandingPage/Landingpage.dart';
 import 'package:flutter/services.dart';
+import 'About/Abouthome.dart';
+import 'About/ContactUs.dart';
 import 'Faqs/AdmissionsOffice/AO_questionPage.dart';
 import 'Faqs/Faqshome.dart';
 import 'HomePage/Homepage.dart';
 import 'LoadingPage/Loadingpage.dart';
 import 'package:sizer/sizer.dart';
+import 'Maps/MainBuilding.dart';
+import 'Maps/MainBuilding/MB-firstOffice.dart';
+import 'Maps/Mapshome.dart';
 
 void main() => runApp(
       DevicePreview(
@@ -36,7 +41,7 @@ class MyApp extends StatelessWidget {
           useInheritedMediaQuery: true,
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
-          home: faqsHome(),
+          home: contactUs(),
         );
       },
     );

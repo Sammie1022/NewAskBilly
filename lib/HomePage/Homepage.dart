@@ -1,4 +1,6 @@
+import 'package:abigail_askbilly/About/Abouthome.dart';
 import 'package:abigail_askbilly/Faqs/Faqshome.dart';
+import 'package:abigail_askbilly/Maps/Mapshome.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -106,7 +108,7 @@ class _homePageState extends State<homePage> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => faqsHome()),
+                            MaterialPageRoute(builder: (context) => mapsHome()),
                           );
                         },
                         child: Image.asset(
@@ -122,7 +124,8 @@ class _homePageState extends State<homePage> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => faqsHome()),
+                            MaterialPageRoute(
+                                builder: (context) => aboutHome()),
                           );
                         },
                         child: Image.asset(
@@ -136,8 +139,12 @@ class _homePageState extends State<homePage> {
                   SizedBox(width: 2.w),
                   // TODO: Add a SizedBox to contain our video.
                   Container(
-                    // color: HexColor('230871'),
-                    //padding: EdgeInsets.symmetric(vertical: 2.h),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: HexColor('230871'),
+                        width: 0.4.w,
+                      ),
+                    ),
                     child: FittedBox(
                       // If your background video doesn't look right, try changing the BoxFit property.
                       // BoxFit.fill created the look I was going for.

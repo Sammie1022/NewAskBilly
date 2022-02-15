@@ -3,6 +3,8 @@
    <application
         android:label="abigail_askbilly"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyB07CPaBJD8kNYrXGtkOfscP84df6X4heA"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
