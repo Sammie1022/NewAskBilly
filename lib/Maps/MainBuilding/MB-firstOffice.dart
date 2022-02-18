@@ -6,7 +6,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
-
 import '../MainBuilding.dart';
 
 class MBfirstOffice extends StatefulWidget {
@@ -58,7 +57,10 @@ class _MBfirstOfficeState extends State<MBfirstOffice> {
                         ),
                         child: Text(
                           'FIRST FLOOR',
-                          style: TextStyle(fontSize: 9.sp, fontFamily: 'Arial'),
+                          style: TextStyle(
+                              fontSize: 9.sp,
+                              fontFamily: 'Arial',
+                              color: Colors.white),
                         )),
                     Container(
                         padding: EdgeInsets.all(0.5.sp),
@@ -107,9 +109,9 @@ class _MBfirstOfficeState extends State<MBfirstOffice> {
                       children: [
                         Container(
                           height: 70.h,
-                          width: 60.w,
+                          width: 55.w,
                           alignment: Alignment.center,
-                          margin: EdgeInsets.only(left: 5.sp),
+                          margin: EdgeInsets.only(left: 18.sp),
                           decoration: BoxDecoration(
                             border: Border.all(
                               color: HexColor('230871'),
@@ -118,7 +120,7 @@ class _MBfirstOfficeState extends State<MBfirstOffice> {
                           ),
                           child: Image.asset(
                             'assets/MapsPage/MB.png',
-                            width: 70.w,
+                            width: 60.w,
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -130,7 +132,7 @@ class _MBfirstOfficeState extends State<MBfirstOffice> {
                               height: 35.h,
                               width: 35.w,
                               alignment: Alignment.center,
-                              margin: EdgeInsets.only(left: 4.sp),
+                              margin: EdgeInsets.only(left: 2.sp),
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   color: HexColor('230871'),
@@ -147,7 +149,8 @@ class _MBfirstOfficeState extends State<MBfirstOffice> {
                               height: 35.h,
                               width: 35.w,
                               alignment: Alignment.center,
-                              margin: EdgeInsets.only(left: 4.sp),
+                              margin: EdgeInsets.only(left: 2.sp),
+                              padding: EdgeInsets.all(2.sp),
                               decoration: BoxDecoration(
                                 color: Colors.white70,
                                 border: Border.all(
@@ -156,9 +159,9 @@ class _MBfirstOfficeState extends State<MBfirstOffice> {
                                 ),
                               ),
                               child: Text(
-                                'TEXT HERE',
+                                '''   A location where business is done, the individuals who work there, or a position of authority''',
                                 style: TextStyle(
-                                  fontSize: 10.sp,
+                                  fontSize: 6.sp,
                                   fontFamily: 'Arial',
                                 ),
                               ),

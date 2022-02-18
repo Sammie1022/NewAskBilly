@@ -1,3 +1,4 @@
+import 'package:abigail_askbilly/tryMenu.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -8,6 +9,7 @@ import 'About/Abouthome.dart';
 import 'About/Admission.dart';
 import 'About/ContactUs.dart';
 import 'About/scholarshipAbout.dart';
+import 'Faqs/AdmissionsOffice/AO_answerPage.dart';
 import 'Faqs/AdmissionsOffice/AO_questionPage.dart';
 import 'Faqs/Faqshome.dart';
 import 'HomePage/Homepage.dart';
@@ -43,7 +45,7 @@ class MyApp extends StatelessWidget {
           useInheritedMediaQuery: true,
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
-          home: scholarshipAbout(),
+          home: tryMenu(),
         );
       },
     );

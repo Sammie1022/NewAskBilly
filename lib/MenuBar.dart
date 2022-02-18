@@ -1,50 +1,106 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class menuBar extends StatelessWidget {
-  const menuBar({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          DrawerHeader(
-            child: Text(
-              'Side menu',
-              style: TextStyle(color: Colors.white, fontSize: 25),
+        // padding: EdgeInsets.only(top: 2.sp),
+        children: [
+          Card(
+            child: ListTile(
+              title: Text('HOME'),
             ),
-            decoration: BoxDecoration(
-                color: Colors.green,
-                image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage('assets/images/cover.jpg'))),
-          ),
-          ListTile(
-            leading: Icon(Icons.input),
-            title: Text('Welcome'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: Icon(Icons.verified_user),
-            title: Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-          ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-          ListTile(
-            leading: Icon(Icons.border_color),
-            title: Text('Feedback'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-          ListTile(
-            leading: Icon(Icons.exit_to_app),
-            title: Text('Logout'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
+          )
+          // Container(
+          //   // padding: EdgeInsets.symmetric(
+          //   //   horizontal: 1.w,
+          //   // ),
+          //   decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //       borderRadius: BorderRadius.all(Radius.circular(8))),
+          //   child: ListTile(
+          //     leading: Container(
+          //       color: Colors.amber,
+          //       child: Icon(
+          //         Icons.home,
+          //         size: 5.h,
+          //       ),
+          //     ),
+          //     title: Container(
+          //       color: Colors.red,
+          //       child: Text(
+          //         'HOME',
+          //         style: TextStyle(fontSize: 5.sp),
+          //       ),
+          //     ),
+          //     onTap: () => null,
+          //   ),
+          // ),
+          // Container(
+          //   margin: EdgeInsets.all(5),
+          //   decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //       borderRadius: BorderRadius.all(Radius.circular(8))),
+          //   child: ListTile(
+          //     leading: Icon(
+          //       Icons.location_on,
+          //       size: 5.h,
+          //     ),
+          //     title: Text(
+          //       'MAPS',
+          //       style: TextStyle(fontSize: 5.sp),
+          //     ),
+          //     onTap: () => null,
+          //   ),
+          // ),
+          // Container(
+          //   margin: EdgeInsets.all(5),
+          //   decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //       borderRadius: BorderRadius.all(Radius.circular(8))),
+          //   child: ListTile(
+          //     leading: Icon(
+          //       Icons.question_answer,
+          //       size: 5.h,
+          //     ),
+          //     title: Text(
+          //       'FAQs',
+          //       style: TextStyle(fontSize: 5.sp),
+          //     ),
+          //     onTap: () => null,
+          //   ),
+          // ),
+          // Container(
+          //   margin: EdgeInsets.all(5),
+          //   decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //       borderRadius: BorderRadius.all(Radius.circular(8))),
+          //   child: ListTile(
+          //     leading: Icon(
+          //       Icons.info,
+          //       size: 10.sp,
+          //     ),
+          //     title: Text(
+          //       'ABOUT NU',
+          //       style: TextStyle(fontSize: 5.sp),
+          //     ),
+          //     onTap: () => null,
+          //   ),
+          // ),
+          // Divider(),
+          // ListTile(
+          //   leading: Icon(
+          //     Icons.person,
+          //     size: 5.h,
+          //   ),
+          //   title: Text(
+          //     'ADMIN',
+          //     style: TextStyle(fontSize: 5.sp),
+          //   ),
+          //   onTap: () => null,
+          // ),
         ],
       ),
     );
