@@ -3,6 +3,7 @@ import 'package:abigail_askbilly/Faqs/widget/navigation_drawer_widget.dart';
 import 'package:abigail_askbilly/HomePage/Homepage.dart';
 import 'package:abigail_askbilly/LoadingPage/Loadingpage.dart';
 import 'package:abigail_askbilly/Maps/Mapshome.dart';
+import 'package:abigail_askbilly/MenuBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -14,14 +15,13 @@ class admissionQusetion extends StatefulWidget {
 }
 
 class _admissionQusetionState extends State<admissionQusetion> {
-  var size, height, width;
+  var _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
-    height = size.height;
-    width = size.width;
     return Scaffold(
-        drawer: NavigationDrawerWidget(),
+        key: _scaffoldKey,
+        drawer: menuBar(),
         body: Container(
           height: 100.h,
           width: 100.w,
@@ -39,40 +39,24 @@ class _admissionQusetionState extends State<admissionQusetion> {
                 ),
                 child: Row(
                   children: [
-                    Icon(
-                      Icons.menu_rounded,
-                      size: 15.sp,
-                    ),
-                    SizedBox(
-                      width: 1.w,
+                    GestureDetector(
+                      child: Icon(
+                        Icons.menu_rounded,
+                        size: 10.h,
+                      ),
+                      onTap: () {
+                        _scaffoldKey.currentState?.openDrawer();
+                      },
                     ),
                     Expanded(
                         child: Text(
                       'ADMISSIONS OFFICE',
                       style: TextStyle(fontSize: 12.sp, fontFamily: 'Arial'),
                     )),
-                    Container(
-                      margin: EdgeInsets.only(right: 10.sp),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('2nd Floor Main Building',
-                              style: TextStyle(
-                                  fontSize: 4.sp, color: HexColor('30408d'))),
-                          Text('8:00 am - 5:00 pm',
-                              style: TextStyle(
-                                  fontSize: 4.sp, color: HexColor('30408d'))),
-                          Text('admissions@national-u.ed.ph',
-                              style: TextStyle(
-                                  fontSize: 4.sp, color: HexColor('30408d'))),
-                        ],
-                      ),
-                    ),
                     Image.asset('assets/logo.png'),
                   ],
                 ),
-              ), //TOPBAR
+              ),
               Container(
                 color: HexColor('f8d00e'),
                 height: 2.h,
@@ -83,7 +67,7 @@ class _admissionQusetionState extends State<admissionQusetion> {
                   children: [
                     Container(
                       height: 100.h,
-                      padding: EdgeInsets.symmetric(horizontal: 25.w),
+                      width: 100.w,
                       decoration: BoxDecoration(
                           gradient: LinearGradient(
                               begin: Alignment.topCenter,
@@ -92,20 +76,646 @@ class _admissionQusetionState extends State<admissionQusetion> {
                             HexColor('edf4fc'),
                             HexColor('c8d9f3')
                           ])),
-                    ),
-                    Container(
-                      alignment: Alignment.centerRight,
-                      margin: EdgeInsets.only(
-                        right: 10.sp,
-                      ),
-                      // padding: EdgeInsets.only(right: 10.sp, bottom: 10.sp),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: 0.2.h,
-                          ),
-                        ],
+                      padding:
+                          EdgeInsets.symmetric(vertical: 10, horizontal: 5.w),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    bottom: 1.h, left: 5.w, right: 5.w),
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: HexColor('30408d'),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          offset: Offset(0, 3),
+                                          color: Colors.blueGrey,
+                                          spreadRadius: .8,
+                                          blurRadius: .5)
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      // ito yung kulay red
+                                      child: Text(
+                                        '01',
+                                        style: TextStyle(
+                                            fontSize: 6.sp,
+                                            color: Colors.white),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: HexColor('230871'),
+                                      ),
+                                      padding: EdgeInsets.all(1.w),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'this is a question',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Container(
@@ -115,13 +725,13 @@ class _admissionQusetionState extends State<admissionQusetion> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => mapsHome()),
+                            MaterialPageRoute(builder: (context) => faqsHome()),
                           );
                         },
                         child: Image.asset(
                           'assets/back-btn.png',
-                          height: 7.h,
-                          width: 7.w,
+                          height: 10.h,
+                          width: 10.w,
                           fit: BoxFit.contain,
                         ),
                       ),

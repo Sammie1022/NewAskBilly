@@ -1,3 +1,4 @@
+import 'package:abigail_askbilly/Faqs/AdmissionsOffice/AO_questionPage.dart';
 import 'package:abigail_askbilly/Faqs/widget/button_widget.dart';
 import 'package:abigail_askbilly/Faqs/widget/navigation_drawer_widget.dart';
 import 'package:abigail_askbilly/HomePage/Homepage.dart';
@@ -14,14 +15,13 @@ class faqsHome extends StatefulWidget {
 }
 
 class _faqsHomeState extends State<faqsHome> {
-  var size, height, width;
+  var _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
-    height = size.height;
-    width = size.width;
     return Scaffold(
-        drawer: NavigationDrawerWidget(),
+        key: _scaffoldKey,
+        drawer: menuBar(),
         body: Container(
           height: 100.h,
           width: 100.w,
@@ -39,9 +39,14 @@ class _faqsHomeState extends State<faqsHome> {
                 ),
                 child: Row(
                   children: [
-                    Icon(
-                      Icons.menu_rounded,
-                      size: 15.sp,
+                    GestureDetector(
+                      child: Icon(
+                        Icons.menu_rounded,
+                        size: 10.h,
+                      ),
+                      onTap: () {
+                        _scaffoldKey.currentState?.openDrawer();
+                      },
                     ),
                     Expanded(
                         child: Text(
@@ -76,17 +81,47 @@ class _faqsHomeState extends State<faqsHome> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => faqsHome()),
-                              );
-                            },
-                            child: Image.asset(
-                                'assets/FAQsPage/images/buttons/AO-btn.png',
-                                width: 13.w,
-                                fit: BoxFit.contain),
+                            onTap: () {},
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  bottom: 1.h, left: 5.w, right: 5.w),
+                              padding: EdgeInsets.all(2),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50.0),
+                                  color: HexColor('30408d'),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        offset: Offset(0, 3),
+                                        color: Colors.blueGrey,
+                                        spreadRadius: .8,
+                                        blurRadius: .5)
+                                  ]),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    // ito yung kulay red
+                                    child: Text(
+                                      '01',
+                                      style: TextStyle(
+                                          fontSize: 6.sp, color: Colors.white),
+                                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50.0),
+                                      color: HexColor('230871'),
+                                    ),
+                                    padding: EdgeInsets.all(1.w),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text(
+                                    'this is a question',
+                                    style: TextStyle(
+                                        fontSize: 6.sp, color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                           GestureDetector(
                             onTap: () {

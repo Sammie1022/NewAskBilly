@@ -78,9 +78,9 @@ flutter:
     - assets/AboutNUPage/TopBtn/
     - assets/MapsPage/
     - assets/gradient-background.png
-    #- assets/HomePage/images
     - assets/back-btn.png
     - assets/FAQsPage/images/buttons/
+    - assets/MapsPage/MainBuilding/
     #- assets/FAQsPage/images/icons
     #- assets/FAQsPage/videos/answers
     #- assets/FAQsPage/videos/background

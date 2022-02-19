@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
+import '../../MenuBar.dart';
 import '../MainBuilding.dart';
 
 class MBfirstOffice extends StatefulWidget {
@@ -14,14 +15,12 @@ class MBfirstOffice extends StatefulWidget {
 }
 
 class _MBfirstOfficeState extends State<MBfirstOffice> {
-  var size, height, width;
+  var _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
-    height = size.height;
-    width = size.width;
     return Scaffold(
-        drawer: NavigationDrawerWidget(),
+        key: _scaffoldKey,
+        drawer: menuBar(),
         body: Container(
           height: 100.h,
           width: 100.w,
@@ -39,9 +38,14 @@ class _MBfirstOfficeState extends State<MBfirstOffice> {
                 ),
                 child: Row(
                   children: [
-                    Icon(
-                      Icons.menu_rounded,
-                      size: 15.sp,
+                    GestureDetector(
+                      child: Icon(
+                        Icons.menu_rounded,
+                        size: 10.h,
+                      ),
+                      onTap: () {
+                        _scaffoldKey.currentState?.openDrawer();
+                      },
                     ),
                     SizedBox(
                       width: 1.w,
@@ -107,23 +111,26 @@ class _MBfirstOfficeState extends State<MBfirstOffice> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Container(
-                          height: 70.h,
-                          width: 55.w,
-                          alignment: Alignment.center,
-                          margin: EdgeInsets.only(left: 18.sp),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: HexColor('230871'),
-                              width: 0.4.w,
+                        Stack(children: [
+                          Container(
+                            height: 70.h,
+                            width: 55.w,
+                            alignment: Alignment.center,
+                            margin: EdgeInsets.only(left: 18.sp),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: HexColor('230871'),
+                                width: 0.4.w,
+                              ),
+                            ),
+                            child: Image.asset(
+                              'assets/MapsPage/MainBuilding/My Video.gif',
+                              width: 60.w,
+                              fit: BoxFit.contain,
                             ),
                           ),
-                          child: Image.asset(
-                            'assets/MapsPage/MB.png',
-                            width: 60.w,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
+                        ]),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
