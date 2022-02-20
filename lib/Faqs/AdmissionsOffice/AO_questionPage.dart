@@ -103,7 +103,6 @@ class _admissionQusetionState extends State<admissionQusetion> {
                                 child: Row(
                                   children: [
                                     Container(
-                                      // ito yung kulay red
                                       child: Text(
                                         '01',
                                         style: TextStyle(

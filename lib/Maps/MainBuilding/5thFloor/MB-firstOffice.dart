@@ -6,8 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
-import '../../MenuBar.dart';
-import '../MainBuilding.dart';
+import '../../../MenuBar.dart';
+import '../../MainBuilding.dart';
 
 class MBfirstOffice extends StatefulWidget {
   @override
@@ -60,7 +60,7 @@ class _MBfirstOfficeState extends State<MBfirstOffice> {
                           ),
                         ),
                         child: Text(
-                          'FIRST FLOOR',
+                          '5TH FLOOR',
                           style: TextStyle(
                               fontSize: 9.sp,
                               fontFamily: 'Arial',

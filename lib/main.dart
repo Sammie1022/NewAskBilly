@@ -16,7 +16,7 @@ import 'HomePage/Homepage.dart';
 import 'LoadingPage/Loadingpage.dart';
 import 'package:sizer/sizer.dart';
 import 'Maps/MainBuilding.dart';
-import 'Maps/MainBuilding/MB-firstOffice.dart';
+import 'Maps/MainBuilding/1stFloor/MB-1-Office.dart';
 import 'Maps/Mapshome.dart';
 
 void main() => runApp(
